@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of site</title>
+    <style>
+        /* fonts */
+        @font-face {
+            font-family: yekan;
+            src: url("{% static 'fonts/Yekan.woff' %}");
+        }
+
+        @font-face {
+            font-family: Sahel;
+            src: url("{% static 'fonts/Sahel.woff' %}");
+        }
+
+        @font-face {
+            font-family: Shabnam;
+            src: url("{% static 'fonts/Shabnam.woff' %}");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m-header">
+        <div class="header">
+            <button class="hidden-btn"><img class="cart-icon" src="{% static 'icons/cart3.png' %}" alt=""></button>
+            <span class="vertical-line"></span>
+            <button class="btn">
+                ورود یا ثبت نام
+            </button>
+            <div class="i-div">
+                <input class="s-input" type="text" autocomplete="off" placeholder="جستجو" dir="rtl">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

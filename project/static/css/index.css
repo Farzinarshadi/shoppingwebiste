@@ -1,0 +1,75 @@
+* {
+    font-family: Shabnam;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.m-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.header {
+    width: 85%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 0.5px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.vertical-line {
+    border-left: 1px solid #ccc; 
+    height: 22px;
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+
+.hidden-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+}
+
+.cart-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.i-div {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.s-input {
+    width: 550px;
+    height: 40px;
+    border-radius: 9px;
+    outline: 0;
+    border: 0;
+    padding-inline-start: 15px;
+    background-color: rgb(240, 240, 241);
+}
