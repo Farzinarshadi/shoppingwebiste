@@ -7,15 +7,28 @@ body {
     padding: 0;
 }
 
+.m-m.efect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .m-header {
-    position: fixed;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #ccc;
     background-color: #fff;
     z-index: 999;
+    transition: all 200ms;
+}
+
+.m-header.scroled {
+    position: fixed;
+    top: 10px;
+    width: 90%;
+    border: 0.5px solid #ccc;
+    border-radius: 12px;
 }
 
 .header {
@@ -80,3 +93,61 @@ body {
     background-color: rgb(240, 240, 241);
 }
 
+
+/* slider */
+.slider {
+    width: 100%;
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+}
+
+.slide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.prev , .next {
+    font-size: 40px;
+    text-decoration: none;
+    color: #000;
+    position: absolute;
+    top: 45%;
+    font-weight: 600 ;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.dots {
+    position: absolute;
+    text-align: center;
+    bottom: 3%;
+    left: 50%;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #717171;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}

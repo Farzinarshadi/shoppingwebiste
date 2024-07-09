@@ -27,22 +27,50 @@
 </head>
 
 <body>
-    <div class="m-header">
-        <div class="header">
-            <button class="hidden-btn"><img class="cart-icon" src="{% static 'icons/cart3.png' %}" alt=""></button>
-            <span class="vertical-line"></span>
-            <button class="btn">
-                ورود | ثبت نام
-                <img src="{% static 'icons/inside.png' %}" alt="">
-            </button>
-            <div class="i-div">
-                <input class="s-input" type="text" autocomplete="off" placeholder="جستجو" dir="rtl">
-                <img src="https://www.digikala.com/statics/img/svg/logo.svg" alt="">
+    <div class="m-m">
+        <div class="m-header" id="mh">
+            <div class="header">
+                <button class="hidden-btn"><img class="cart-icon" src="{% static 'icons/cart3.png' %}" alt=""></button>
+                <span class="vertical-line"></span>
+                <button class="btn">
+                    ورود | ثبت نام
+                    <img src="{% static 'icons/inside.png' %}" alt="">
+                </button>
+                <div class="i-div">
+                    <input class="s-input" type="text" autocomplete="off" placeholder="جستجو" dir="rtl">
+                    <img src="https://www.digikala.com/statics/img/svg/logo.svg" alt="">
+                </div>
             </div>
         </div>
     </div>
 
-   
+    <!-- slider -->
+    <div class="slider">
+        <div class="slide active">
+            <img class="slider-image" src="{% static 'images/slide1.webp' %}">
+        </div>
+        <div class="slide">
+            <img class="slider-image" src="{% static 'images/slide2.webp' %}">
+        </div>
+        <div class="slide">
+            <img class="slider-image" src="{% static 'images/slide3.webp' %}">
+        </div>
+        <div class="slide">
+            <img class="slider-image" src="{% static 'images/slide4.webp' %}">
+        </div>
+
+        <div href="#" class="prev">&lt;</div>
+        <div href="#" class="next">&gt;</div>
+        <div class="dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+        </div>
+    </div>
+
+
+
 
     <div style="height: 120vh;"></div>
 
