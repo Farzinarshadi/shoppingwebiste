@@ -8,19 +8,22 @@ body {
 }
 
 .m-header {
+    position: fixed;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 999;
 }
 
 .header {
-    width: 85%;
+    width: 90%;
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
 
 .btn {
@@ -63,10 +66,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: end;
+    gap: 1%;
+    position: relative;
 }
 
 .s-input {
-    width: 550px;
+    width: 40%;
     height: 40px;
     border-radius: 9px;
     outline: 0;
@@ -75,66 +80,3 @@ body {
     background-color: rgb(240, 240, 241);
 }
 
-.s-header {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    direction: rtl;
-    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.1);
-
-}
-
-.s-h-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.s-h-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    gap: 5px;
-    font-size: 13px;
-    height: 50px;
-    color: #877f7f;
-}
-
-.hover {
-    position: relative;
-}
-
-.category {
-    position: absolute;
-    width: 1000px;
-    height: 800px;
-    background-color: aqua;
-    display: none;
-    top: 100%;
-    right: 0;
-}
-
-.hover:hover .category {
-    display: block;
-}
-
-.m-s-header {
-    width: 85%;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-.text {
-    font-size: 15px;
-    font-weight: 550;
-    color: black;
-}
-
-.icons-v2 {
-    filter: brightness(0) saturate(100%) invert(51%) sepia(0%) saturate(619%) hue-rotate(172deg) brightness(98%) contrast(93%);
-}
