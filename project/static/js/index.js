@@ -85,3 +85,16 @@ for (var i = 0; i < dots.length; i++) {
     dots[n].classList.add('active');
   });
 }
+
+// scroll product bar 
+const productsSlider = document.getElementById('products-slider');
+const productContainer = productsSlider.querySelector('.product-container');
+
+function moveSlider(direction) {
+    const scrollAmount = direction > 0 ? productContainer.offsetWidth : -productContainer.offsetWidth;
+    productContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
