@@ -58,9 +58,8 @@
         <div class="slide">
             <img class="slider-image" src="{% static 'images/slide4.webp' %}">
         </div>
-
-        <div href="#" class="prev">&lt;</div>
-        <div href="#" class="next">&gt;</div>
+        <div class="prev rotate"><img src="{% static 'icons/rigth.png' %}"></div>
+        <div class="next"><img src="{% static 'icons/rigth.png' %}"></div>
         <div class="dots">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
@@ -69,10 +68,73 @@
         </div>
     </div>
 
+    <!-- category bar -->
+    <div class="flex">
+        <div class="slider-container">
+            <button class="slider-btn left-btn">&lt;</button>
+            <div class="category-bar">
+                <div class="c-item">
+                    <img src="{% static 'images/item1.jpg' %}">
+                    <div class="title">تی شرت</div>
+                    <div class="hidden-text">122 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item2.jpg' %}">
+                    <div class="title">پیراهن</div>
+                    <div class="hidden-text">201 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item3.jpg' %}">
+                    <div class="title">شلوار و سرهمی</div>
+                    <div class="hidden-text">58 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item4.jpg' %}">
+                    <div class="title">شلوار جین</div>
+                    <div class="hidden-text">12 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item5.jpg' %}">
+                    <div class="title">شلوار</div>
+                    <div class="hidden-text">185 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item6.jpg' %}">
+                    <div class="title">سویشرت</div>
+                    <div class="hidden-text">7 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item7.jpg' %}">
+                    <div class="title">تاپ</div>
+                    <div class="hidden-text">19 items</div>
+                </div>
+                <div class="c-item">
+                    <img src="{% static 'images/item8.jpg' %}">
+                    <div class="title">ژاکت و پلیور</div>
+                    <div class="hidden-text">5 items</div>
+                </div>
+                <div class="c-item">
+                    <img class="category-image" src="{% static 'images/item9.png' %}">
+                    <div class="title">ساعت مچی</div>
+                    <div class="hidden-text">55 items</div>
+                </div>
+                <div class="c-item">
+                    <img class="category-image" src="{% static 'images/item10.png' %}">
+                    <div class="title">لبتاپ</div>
+                    <div class="hidden-text">0 items</div>
+                </div>
+            </div>
+            <button class="slider-btn right-btn">&gt;</button>
+        </div>
+    </div>
+
+
+
     <!-- products bar -->
     <div class="m-p">
         <div class="products-bar" id="products-slider">
             <div class="product-container">
+                <img class="a-image" src="{% static 'images/amazings.svg' %}">
                 <div class="product-items">
                     <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
                     <p>موبایل ...</p>
@@ -137,15 +199,58 @@
                     <p> ایفون 266 ...</p>
                     <div class="price"><strike>45,000,000</strike>41,000,000</div>
                 </div>
-                <img class="a-image" src="{% static 'images/amazings.svg' %}">
             </div>
-            <button class="control-btn prev-btn" onclick="moveSlider(-1)">قبلی</button>
-            <button class="control-btn next-btn" onclick="moveSlider(1)">بعدی</button>
+            <div class="flex">
+                <button class="control-btn prev-btn" onclick="moveSlider(-1)">
+                    <div class="">&lt;</div>
+                </button>
+            </div>
+            <div class="flex">
+                <button class="control-btn next-btn" onclick="moveSlider(1)">&gt;</button>
+            </div>
         </div>
     </div>
 
 
-    <div style="height: 120vh;"></div>
+    <!-- new products -->
+    <div class="n-text">
+        <p>محصولات جدید</p>
+    </div>
+    <div class="flex">
+        <div class="new-products">
+            <div class="n-item">
+                <img class="n-image" src="{% static 'images/item1.jpg' %}">
+                <div class="coulmn">
+                    <p>تیشرت مدل 1536</p>
+                    <div class="n-price">330,000</div>
+                </div>
+            </div>
+            <div class="n-item">
+                <img class="n-image" src="{% static 'images/item2.jpg' %}">
+                <div class="coulmn">
+                    <p>پیراهن دکمه ای مدل 125</p>
+                    <div class="n-price">330,000</div>
+                </div>
+            </div>
+            <div class="n-item">
+                <img class="n-image" src="{% static 'images/item3.jpg' %}">
+                <div class="coulmn">
+                    <p>شلوار زنانه مدل 458</p>
+                    <div class="n-price">224,000</div>
+                </div>
+            </div>
+            <div class="n-item">
+                <img class="n-image" src="{% static 'images/item4.jpg' %}">
+                <div class="coulmn">
+                    <p>شلوار مردانه لی مدل 896</p>
+                    <div class="n-price">490,000</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="height: 120vh; background-color: rgb(3, 152, 194);"></div>
 
     <script src="{% static 'js/index.js' %}"></script>
 </body>

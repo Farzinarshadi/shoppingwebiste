@@ -19,60 +19,55 @@ var dots = document.getElementsByClassName('dot');
 var n = 0;
 
 function DisplayNone(){
-  for (var i=0 ; i<slides.length;i++){
-    slides[i].style.display='none';
-  };
-};
+  for (var i = 0; i < slides.length; i++){
+    slides[i].style.display = 'none';
+  }
+}
 
 function NoActive(){
-  for (var i=0;i<slides.length;i++){
+  for (var i = 0; i < slides.length; i++){
     slides[i].classList.remove('active');
-  };
+  }
   for (var i = 0; i < dots.length; i++) {
     dots[i].classList.remove('active');
   }
-};
+}
 
-
-next.addEventListener('click' , function(){
+next.addEventListener('click', function(){
   n++;
-  if (n<slides.length-1){
-    n=1;
+  if (n > slides.length - 1){
+    n = 0;
   }
   DisplayNone();
   NoActive();
-  slides[n].style.display = 'block';;
+  slides[n].style.display = 'block';
   slides[n].classList.add('active');
   dots[n].classList.add('active');
-
 });
 
-prev.addEventListener('click' , function(){
+prev.addEventListener('click', function(){
   n--;
-  if (n<0){
-    n=slides.length-1;
+  if (n < 0){
+    n = slides.length - 1;
   }
   DisplayNone();
   NoActive();
-  slides[n].style.display = 'block';;
+  slides[n].style.display = 'block';
   slides[n].classList.add('active');
   dots[n].classList.add('active');
-
 });
-
 
 setInterval(function(){
   n++;
-  if (n>slides.length-1){
-    n=0;
+  if (n > slides.length - 1){
+    n = 0;
   }
   DisplayNone();
   NoActive();
-  slides[n].style.display = 'block';;
+  slides[n].style.display = 'block';
   slides[n].classList.add('active');
   dots[n].classList.add('active');
-},5000);
-
+}, 5000);
 
 for (var i = 0; i < dots.length; i++) {
   dots[i].addEventListener('click', function() {
@@ -86,6 +81,7 @@ for (var i = 0; i < dots.length; i++) {
   });
 }
 
+
 // scroll product bar 
 const productsSlider = document.getElementById('products-slider');
 const productContainer = productsSlider.querySelector('.product-container');
@@ -97,4 +93,26 @@ function moveSlider(direction) {
         behavior: 'smooth'
     });
 }
+
+// category bar 
+document.addEventListener('DOMContentLoaded', function() {
+  const leftBtn = document.querySelector('.left-btn');
+  const rightBtn = document.querySelector('.right-btn');
+  const categoryBar = document.querySelector('.category-bar');
+
+  let scrollAmount = 0;
+  const itemWidth = 160 + 10; // عرض آیتم به اضافه gap
+
+  leftBtn.addEventListener('click', () => {
+      scrollAmount = Math.max(scrollAmount - itemWidth, 0);
+      categoryBar.style.transform = `translateX(-${scrollAmount}px)`;
+  });
+
+  rightBtn.addEventListener('click', () => {
+      const maxScroll = categoryBar.scrollWidth - categoryBar.clientWidth;
+      scrollAmount = Math.min(scrollAmount + itemWidth, maxScroll);
+      categoryBar.style.transform = `translateX(-${scrollAmount}px)`;
+  });
+});
+
 

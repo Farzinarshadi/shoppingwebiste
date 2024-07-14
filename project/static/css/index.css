@@ -42,10 +42,8 @@ body::-webkit-scrollbar-track {
 
 .m-header.scroled {
     position: fixed;
-    top: 10px;
-    width: 90%;
+    top: 0;
     border: 0.5px solid #ccc;
-    border-radius: 12px;
 }
 
 .header {
@@ -120,6 +118,7 @@ body::-webkit-scrollbar-track {
 .slider img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 .slide {
@@ -157,18 +156,92 @@ body::-webkit-scrollbar-track {
 
 .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     margin: 0 5px;
     background-color: #717171;
     border-radius: 50%;
     cursor: pointer;
+    transition: all 150ms;
 }
 
 .dot.active {
     background-color: #fff;
+    width: 15px;
+    border-radius: 6px;
 }
 
+/* category bar */
+.slider-container {
+    position: relative;
+    width: 85%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.category-bar {
+    display: flex;
+    transition: transform 400ms ease;
+    gap: 15px;
+}
+
+.c-item {
+    width: 160px;
+    flex: 0 0 auto;
+    height: auto;
+    padding: 10px 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 5px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-item .hidden-text {
+    position: absolute;
+    bottom: -100%; 
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    transition: all 400ms;
+}
+
+.c-item:hover .hidden-text {
+    bottom: 0; 
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.category-image {
+    width: 100px;
+    height: 100px;
+}
 
 /* products bar */
 .m-p {
@@ -244,23 +317,107 @@ body::-webkit-scrollbar-track {
 
 .control-btn {
     position: absolute;
-    top: 50%;
+    bottom: 2%;
     transform: translateY(-50%);
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     background-color: rgba(255, 255, 255, 0.5);
     color: black;
-    font-size: 14px;
+    font-size: 11px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .prev-btn {
     left: 8px;
-    background-color: aqua;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 6px;
 }
 
 .next-btn {
     right: 8px;
-    background-color: aqua;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 6px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* responsive */
+@media (max-width: 596px) {
+    .btn {
+        display: none;
+    }
+    .hidden-btn{
+        display: none;
+    }
+}
+
+
+/* new products */
+.n-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    margin-bottom: 0;
+}
+
+.n-text p {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.new-products {
+    width: 85%;
+    margin: 10px 0;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.n-item {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    direction: rtl;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 9px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 300ms;
+    border: 1px solid #ccc;
+
+}
+
+.n-item:hover {
+    background-color: rgb(198, 0, 86);
+    color: #fff;
+}
+
+.n-item:hover .n-image {
+    border-radius: 9px;
+}
+
+
+.coulmn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
