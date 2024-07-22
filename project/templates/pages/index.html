@@ -1,3 +1,4 @@
+{% extends 'base/base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -7,56 +8,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index of site</title>
-    <style>
-        /* fonts */
-        @font-face {
-            font-family: yekan;
-            src: url("{% static 'fonts/Yekan.woff' %}");
-        }
-
-        @font-face {
-            font-family: Sahel;
-            src: url("{% static 'fonts/Sahel.woff' %}");
-        }
-
-        @font-face {
-            font-family: Shabnam;
-            src: url("{% static 'fonts/Shabnam.woff' %}");
-        }
-    </style>
 </head>
 
 <body>
-    <div class="m-m">
-        <div class="m-header" id="mh">
-            <div class="header">
-                <button class="hidden-btn"><img class="cart-icon" src="{% static 'icons/cart3.png' %}" alt=""></button>
-                <span class="vertical-line"></span>
-                <button class="btn">
-                    ورود | ثبت نام
-                    <img src="{% static 'icons/inside.png' %}" alt="">
-                </button>
-                <div class="i-div">
-                    <input class="s-input" type="text" autocomplete="off" placeholder="جستجو" dir="rtl">
-                    <img src="https://www.digikala.com/statics/img/svg/logo.svg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
+    {% block content %}
+
 
     <!-- slider -->
     <div class="slider">
         <div class="slide active">
-            <img class="slider-image" src="{% static 'images/slide1.webp' %}">
+            <img class="slider-image" src="{% static 'images/slide1.webp' %}"
+                data-mobile-src="https://cdn.mobit.ir/get/mobit/landing/29/6683f60d187b1.webp?inline=1">
         </div>
         <div class="slide">
-            <img class="slider-image" src="{% static 'images/slide2.webp' %}">
+            <img class="slider-image" src="{% static 'images/slide2.webp' %}"
+                data-mobile-src="https://cdn.mobit.ir/get/mobit/landing/29/667ff520a6071.webp?inline=1">
         </div>
         <div class="slide">
-            <img class="slider-image" src="{% static 'images/slide3.webp' %}">
+            <img class="slider-image" src="{% static 'images/slide3.webp' %}"
+                data-mobile-src="https://cdn.mobit.ir/get/mobit/landing/29/6613c03155269.webp?inline=1">
         </div>
         <div class="slide">
-            <img class="slider-image" src="{% static 'images/slide4.webp' %}">
+            <img class="slider-image" src="{% static 'images/slide4.webp' %}"
+                data-mobile-src="https://cdn.mobit.ir/get/mobit/landing/29/6613e0f386050.webp?inline=1">
         </div>
         <div class="prev rotate"><img src="{% static 'icons/rigth.png' %}"></div>
         <div class="next"><img src="{% static 'icons/rigth.png' %}"></div>
@@ -67,6 +41,7 @@
             <span class="dot" data-slide="3"></span>
         </div>
     </div>
+
 
     <!-- category bar -->
     <div class="flex">
@@ -128,85 +103,34 @@
         </div>
     </div>
 
-
-
     <!-- products bar -->
+    <div class="n-text">
+        <p>محصولات شگفت انگیز</p>
+    </div>
     <div class="m-p">
         <div class="products-bar" id="products-slider">
             <div class="product-container">
-                <img class="a-image" src="{% static 'images/amazings.svg' %}">
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
 
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
+                {% for item in off_products %}
+                <a href="{% url 'pages_app:products' item.id %}">
+                    <div class="product-items">
+                        <div class="image-div"><img class="hover" src="{{item.image.url}}"></div>
+                        <p>{{item.name}}</p>
+                        <div class="price">{{item.off_price}}<div>تومان</div>
+                            <div><strike style="color: brown;">{{item.price}}</strike></div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
 
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p>موبایل ایفون حافظه 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
-
-                <div class="product-items">
-                    <div class="image-div"><img src="{% static 'images/iphone.jpg' %}"></div>
-                    <p> ایفون 266 ...</p>
-                    <div class="price"><strike>45,000,000</strike>41,000,000</div>
-                </div>
             </div>
             <div class="flex">
                 <button class="control-btn prev-btn" onclick="moveSlider(-1)">
-                    <div class="">&lt;</div>
+                    <div class="">&gt;</div>
                 </button>
             </div>
             <div class="flex">
-                <button class="control-btn next-btn" onclick="moveSlider(1)">&gt;</button>
+                <button class="control-btn next-btn" onclick="moveSlider(1)">&lt;</button>
             </div>
         </div>
     </div>
@@ -218,39 +142,25 @@
     </div>
     <div class="flex">
         <div class="new-products">
+            {% for item in new_products %}
             <div class="n-item">
-                <img class="n-image" src="{% static 'images/item1.jpg' %}">
+                <img class="n-image" src="{{item.image.url}}">
                 <div class="coulmn">
-                    <p>تیشرت مدل 1536</p>
-                    <div class="n-price">330,000</div>
+                    <p>{{item.name}}</p>
+                    <div class="n-price">{{item.price}}</div>
                 </div>
             </div>
-            <div class="n-item">
-                <img class="n-image" src="{% static 'images/item2.jpg' %}">
-                <div class="coulmn">
-                    <p>پیراهن دکمه ای مدل 125</p>
-                    <div class="n-price">330,000</div>
-                </div>
-            </div>
-            <div class="n-item">
-                <img class="n-image" src="{% static 'images/item3.jpg' %}">
-                <div class="coulmn">
-                    <p>شلوار زنانه مدل 458</p>
-                    <div class="n-price">224,000</div>
-                </div>
-            </div>
-            <div class="n-item">
-                <img class="n-image" src="{% static 'images/item4.jpg' %}">
-                <div class="coulmn">
-                    <p>شلوار مردانه لی مدل 896</p>
-                    <div class="n-price">490,000</div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
-
     <div style="height: 120vh; background-color: rgb(3, 152, 194);"></div>
+
+
+
+    {% endblock %}
+
+
 
     <script src="{% static 'js/index.js' %}"></script>
 </body>

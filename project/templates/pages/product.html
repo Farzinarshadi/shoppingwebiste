@@ -1,0 +1,104 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{{ product.name }} | DigiPro{% endblock %}
+</head>
+
+<body>
+
+    {% block content %}
+
+    <!-- product container -->
+    <div class="p-main">
+        <div class="product-container-v2">
+            <div class="image-container">
+                <img class="p-image" src="{{product.image.url}}" alt="">
+            </div>
+            <div class="information">
+                <h4 class="name">{{product.name}}</h4>
+                <div class="border"></div>
+                <div class="comment">
+                    <div class="p-star">
+                        <div class="s-s">&#9733;</div>
+                        <div class="score">4.3</div>
+                        <div class="kharidar">(از 211 خریدار)</div>
+                    </div>
+                    <div class="comment-count">116 دیدگاه</div>
+                </div>
+                <!-- colors -->
+                <div class="colors">
+                    <h5>رنگ : <span id="selected-color-name">سفید</span></h5>
+                    <div class="color-options" id="color-options">
+                        <span class="color-option selected" data-color="white" data-name="سفید"
+                            style="background-color: white;"></span>
+                        <span class="color-option" data-color="red" data-name="قرمز"
+                            style="background-color: red;"></span>
+                        <span class="color-option" data-color="blue" data-name="آبی"
+                            style="background-color: blue;"></span>
+                        <span class="color-option" data-color="green" data-name="سبز"
+                            style="background-color: green;"></span>
+                    </div>
+                </div>
+                <!-- options -->
+                <div class="options">
+                    <h5>ویژگی ها</h5>
+                    <div class="flex-v3">
+                        <div class="option">
+                            <div class="option-name">نوع کاربری</div>
+                            <div class="option-info">ورزشی , رسمی و روزمره</div>
+                        </div>
+                        <div class="option">
+                            <div class="option-name">نوع کاربری</div>
+                            <div class="option-info">ورزشی , رسمی و روزمره</div>
+                        </div>
+                        <div class="option">
+                            <div class="option-name">نوع کاربری</div>
+                            <div class="option-info">ورزشی , رسمی و روزمره</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="seller">
+                    <div>دیجی پرو</div>
+                    <div class="flex-div">
+                        <div class="star">امتیاز :<div class="y">4.8</div>
+                            <div class="s-s">&#9733;</div>
+                        </div>
+                        <div class="vertical-line"></div>
+                        <div class="star">عملکرد :<div class="g">فوق العاده</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Available">موجود در انبار</div>
+                <div class="p-container">
+                    {% if product.is_off %}
+                    <div class="off-price"><strike>{{product.price|intcomma}}</strike></div>
+                    <div class="price-v2">{{product.off_price|intcomma}} <div>تومان</div>
+                    </div>
+                    {% else %}
+                    <div class="price-v2">{{product.price|intcomma}} <div>تومان</div>
+                    </div>
+                    {% endif %}
+                </div>
+                <button class="cart-btn">افزودن به سبد خرید</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 100vh;"></div>
+
+    {% endblock %}
+
+
+
+
+</body>
+
+</html>

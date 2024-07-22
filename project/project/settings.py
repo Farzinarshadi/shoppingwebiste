@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u%ps#bjt6t4o%c*ww(07^q9j#_7u587q&p8-n4m4oe#hc^2!kb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'pages_app',
+    'products_app',
+    'profile_app',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +122,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# مسیر برای ذخیره فایل‌های آپلود شده
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

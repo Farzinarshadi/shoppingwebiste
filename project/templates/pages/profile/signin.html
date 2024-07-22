@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/profile/signin.css' %}">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Shabnam;
+            src: url("{% static 'fonts/Shabnam.woff' %}");
+        }
+    </style>
+</head>
+<body>
+    <div class="signin">
+        <form action="{% url 'profile_app:signin' %}" method="post">
+            {% csrf_token %}
+            <h3>ورود | ثبت نام</h3>
+            <p>سلام</p>
+            <p>شماره موبایل و یا ایمیل خود را وارد کنید</p>
+            <div class="column">
+                <div class="input-wrapper">
+                    <input type="text" class="input" name="Mobile" autocomplete="off" autofocus>
+                    <div id="error"></div>
+                </div>
+                <button type="submit" class="button" id="submit-button">ورود</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/signin.js' %}"></script>
+</body>
+</html>

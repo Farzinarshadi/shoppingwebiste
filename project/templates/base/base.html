@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- links -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        /* fonts */
+        @font-face {
+            font-family: yekan;
+            src: url("{% static 'fonts/Yekan.woff' %}");
+        }
+
+        @font-face {
+            font-family: Sahel;
+            src: url("{% static 'fonts/Sahel.woff' %}");
+        }
+
+        @font-face {
+            font-family: Shabnam;
+            src: url("{% static 'fonts/Shabnam.woff' %}");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m-m">
+        <div class="m-header" id="mh">
+            <div class="header">
+                <button class="hidden-btn"><img class="cart-icon" src="{% static 'icons/cart3.png' %}" alt=""></button>
+                <span class="vertical-line"></span>
+                {% if request.user.is_authenticated %}
+                <div class="container-undermenu">
+                    <button class="u-text hidden-btn"><img src="{% static 'icons/user.png' %}"></button>
+                    <div class="undermenu">
+                        <div class="item">دیجی کلاب</div>
+                        <div class="item">حساب کاربری</div>
+                        <div class="item">سفارش ها</div>
+                        <a href="{% url 'profile_app:logout' %}">
+                            <div class="item">خروج از حساب کاربری</div>
+                        </a>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'profile_app:signin' %}">
+                    <button class="btn">
+                        ورود | ثبت نام
+                        <img src="{% static 'icons/inside.png' %}" alt="">
+                    </button>
+                </a>
+                {% endif %}
+                <div class="i-div">
+                    <input class="s-input" type="text" autocomplete="off" placeholder="جستجو در محصولات" dir="rtl">
+                    <img src="https://www.digikala.com/statics/img/svg/logo.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="changer-sec">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- mobile footer -->
+    <div class="mobile-footer">
+        <div class="m-item"><button class="m-btn" id="profile"><img src="{% static 'icons/user.png' %}">حساب</button>
+        </div>
+        <div class="m-item"><button class="m-btn" id="category"><img src="{% static 'icons/category.png' %}">دسته
+                بندی</button></div>
+        <div class="m-item"><button class="m-btn" id="cart"><img class="min"
+                    src="{% static 'icons/cart2.png' %}">سبد</button>
+        </div>
+        <a href="{% url 'pages_app:index' %}">
+            <div class="m-item"><button class="m-btn" id="home"><img src="{% static 'icons/home.svg' %}">خانه</button></div>
+        </a>
+    </div>
+
+
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/product.js' %}"></script>
+
+</body>
+
+</html>

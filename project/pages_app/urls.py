@@ -3,5 +3,10 @@ from pages_app import views
 
 app_name="pages_app"
 urlpatterns = [
-    path('' , views.index , name='index'),
+    path('home/' , views.index , name='index'),
+    path('cart/' , views.cart , name='cart'),
+    path('category/' , views.category , name='category'),
+    path('profile/' , views.profile , name='profile'),
+
+    path('products/<int:id>/' , views.products , name='products'),
 ]
